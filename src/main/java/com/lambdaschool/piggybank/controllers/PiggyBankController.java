@@ -15,8 +15,8 @@ import java.util.List;
 public class PiggyBankController {
     @Autowired
     private CoinRepository coinRepository;
-    @GetMapping(value="/coins/all", produces="application/json")
-    public ResponseEntity<?> findAllCoins() {
+    @GetMapping(value="/total", produces="application/json")
+    public ResponseEntity<?> getTotal() {
          double total = 0;
         List<Coin> coins = new ArrayList<>();
         coinRepository.findAll().iterator().forEachRemaining((coins::add));
